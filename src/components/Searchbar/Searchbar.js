@@ -1,5 +1,5 @@
-// Searchbar.js
 import React, { Component } from 'react';
+import searchIcon from '../search_icon.png';
 
 class Searchbar extends Component {
   state = {
@@ -20,18 +20,24 @@ class Searchbar extends Component {
     return (
       <header className="searchbar">
         <form className="form" onSubmit={this.handleSubmit}>
-          <input
-            className="input"
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search images and photos"
-            value={this.state.query}
-            onChange={this.handleChange}
-          />
-          <button type="submit" className="button">
-            Search
-          </button>
+          <div className="input-container">
+            <button
+              type="button"
+              className="search-button"
+              onClick={this.handleSubmit}
+            >
+              <img src={searchIcon} alt="Search" />
+            </button>
+            <input
+              className="input"
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+              value={this.state.query}
+              onChange={this.handleChange}
+            />
+          </div>
         </form>
       </header>
     );

@@ -74,8 +74,12 @@ export class App extends Component {
         </div>
         {isLoading && <Loader />}
         <div className="button-container">
-          {images.length > 0 && !isLoading && (
-            <Button onClick={this.handleLoadMore} />
+          {images.length > 0 && (
+            <Button
+              onClick={this.handleLoadMore}
+              disabled={isLoading}
+              loading={isLoading} 
+            />
           )}
         </div>
         {showModal && (
