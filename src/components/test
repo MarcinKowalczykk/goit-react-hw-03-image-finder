@@ -1,3 +1,4 @@
+// App.js
 import React, { Component } from 'react';
 import axios from 'axios';
 import Searchbar from './Searchbar/Searchbar';
@@ -9,7 +10,7 @@ import Modal from './Modal/Modal';
 
 const API_KEY = '39383014-65ce5dfe2161e424b70e47e6d'; 
 
-export class App extends Component {
+class App extends Component {
   state = {
     query: '',
     images: [],
