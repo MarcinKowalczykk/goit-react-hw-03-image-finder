@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ImageGalleryItem from './ImageGallery/ImageGalleryItem';
@@ -11,6 +12,11 @@ import './styles.css';
 const API_KEY = '39383014-65ce5dfe2161e424b70e47e6d';
 
 export class App extends Component {
+  static propTypes = {
+    images: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    showModal: PropTypes.bool.isRequired,
+    modalImage: PropTypes.string.isRequired,};
   state = {
     query: '',
     images: [],

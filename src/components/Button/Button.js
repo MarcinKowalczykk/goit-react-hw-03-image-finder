@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Loader from '../Loader/Loader'; 
 
 const LoadMoreButton = ({ onClick, disabled, loading }) => (
@@ -9,5 +10,9 @@ const LoadMoreButton = ({ onClick, disabled, loading }) => (
       </button>
     </div>
   );
-
+  LoadMoreButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
+    loading: PropTypes.bool.isRequired,
+  };
 export default LoadMoreButton;
